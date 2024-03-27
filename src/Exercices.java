@@ -1,7 +1,9 @@
 public class Exercices {
 
     public static void main(String[] args) {
-
+/**
+ * Multiplication du nombre 1
+ */
         System.out.println("[Table de multiplication de 1]\n\t" +
                         "1*1="+ 1 +"\n\t" +
                         "1*2="+ 2 +"\n\t" +
@@ -15,9 +17,16 @@ public class Exercices {
                         "1*10="+ 10 +"\n\t" +
                         "1*11="+ 11 +"\n\t" +
                         "1*12="+ 12);
-
+/**
+ * Appel de la fonction avec la valeur choisie;
+ */
         multiplicationNbre1(1);
     }
+
+    /**
+     * Multiplication d'un nombre à définir comme paramètre, la multiplication se fera jusqu'au nombre défini+9.
+     * @param nbre à définir dans le paramètre
+     */
     static void multiplicationNbre1(int nbre){
         System.out.println("[===================================Table de multiplication de 1 à 9==================================]\n"
                 +nbre+"*1="+(nbre)+"\t\t"+(nbre+1)+"*1="+((nbre + 1))+"\t\t"+(nbre+2)+"*1="+((nbre + 2))+"\t\t"+(nbre+3)+"*1="+((nbre + 3))+"\t\t"+(nbre+4)+"*1="+((nbre + 4))+"\t\t"+(nbre+5)+"*1="+((nbre + 5))+"\t\t"+(nbre+6)+"*1="+((nbre + 6))+"\t\t"+(nbre+7)+"*1="+((nbre + 7))+"\t\t"+(nbre+8)+"*1="+((nbre + 8))+"\n"
