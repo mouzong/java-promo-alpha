@@ -22,7 +22,7 @@ example:
 
 ```
 ##### exo 2 :
-Etendre le programme en exo 1 ci-dessous pour qu'il affiche la table de multiplication des nombres de 1 à 9 sous forme d'une matrices
+Etendre le programme en exo 1 ci-dessus pour qu'il affiche la table de multiplication des nombres de 1 à 9 sous forme d'une matrices
 example: 
 ```
    [ ============ Table de multiplication de 5 ========= ]
@@ -40,3 +40,25 @@ example:
        5 x 12 = 60
 Faire ceci pour tous les nombres de 1 à 9 !!!
 ```
+
+##### exo 3 : 
+Ecrire un programme java qui calcule et affiche la moyenne de trois nombre entier au hasard
+
+##### exo 4 :
+Écrivez un programme Java qui prend deux nombres entiers prédéfinis, les additionne, puis affiche le résultat de l'addition dans la console.
+
+##### exo 5 :
+Écrivez un programme Java qui prend deux nombres entiers prédéfinis, les soustrait, puis affiche le résultat de la soustraction dans la console.
+
+##### exo 6 :
+Écrivez un programme Java qui prend deux nombres entiers prédéfinis, les multiplie, puis affiche le résultat de la multiplication dans la console.
+
+##### exo 7 :
+Écrivez un programme Java qui prend deux nombres entiers prédéfinis, les multiplie, puis affiche le résultat de la multiplication dans la console.
+
+##### exo 8 :
+Ecrire un programme java qui affiche la table de multiplication d'un nombre pair.
+Le programme doit controler et afficher uniquement les multiples differents du nombre considéré.
+
+##### exo 9 : 
+Ecrire un programme qui vérifie l'age d'un utilisateur et lui dit s'il est éligible au vote
