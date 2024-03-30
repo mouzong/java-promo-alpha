@@ -14,5 +14,7 @@ public class Moyenne {
 
         System.out.println("La moyenne est = "+(a+b+c)/3);
 
+
+
     }
 }
