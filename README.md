@@ -62,3 +62,20 @@ Le programme doit controler et afficher uniquement les multiples differents du n
 
 ##### exo 9 : 
 Ecrire un programme qui vérifie l'age d'un utilisateur et lui dit s'il est éligible au vote
+
+##### exo 10 :
+Ecire un programme java qui calcule et affiche la table de multiplication d'un nombre entré au clavier par un utilisateur.
+Le programme doit afficher le resultat de votre table sous forme de tableau et stocker toutes les operations dans un tableau a deux dimensions.
+```
+   nombre = 3
+   resultat = --------------------------
+             | a | x | b | = | resultat |
+              --------------------------
+
+```
+
+#### exo 11 : 
+Ecrire un programme java qui demande à un utilisateuir de choisir parmis les entrées de menu d'une calculatrice puis demande deux nombres et éffectue une opération arithmétique sur la base du choix de l'utilisateur.
+
+
+
