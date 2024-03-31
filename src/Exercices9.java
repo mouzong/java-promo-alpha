@@ -1,7 +1,7 @@
 public class Exercices9 {
     public static void main(String[] args) {
 
-        //Exercice 9 Ecrire un programme qui vérifie l'age d'un utilisateur et lui dit s'il est éligible au vote
+        //Exercice 9 Ecrire un programme qui vérifie l'age d'un utilisateur et lui dit s'il est éligible au vote.
       if(args.length==1){
 
           int ageChoisi=Integer.parseInt(args[0]);
