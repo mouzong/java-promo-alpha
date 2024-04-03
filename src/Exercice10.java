@@ -28,20 +28,20 @@ public class Exercice10 {
                 nbreChoisi + "x12=" + nbreChoisi * 12}};                         //Affectation du 12ième élément [0][11].
 
         System.out.println("---Table de multiplication de " + nbreChoisi + "---");
-        System.out.println("\t_________");
+        System.out.println("\t\t_______________");
         System.out.println(
-                "\t|" + tab_multiplication[0][0] + //nbreChoisi*1
-                        "\t|\n\t|" + tab_multiplication[0][1] +   //nbreChoisi*2
-                        "\t|\n\t|" + tab_multiplication[0][2] +   //nbreChoisi*3
-                        "\t|\n\t|" + tab_multiplication[0][3] +   //nbreChoisi*4
-                        "\t|\n\t|" + tab_multiplication[0][4] +   //nbreChoisi*5
-                        "\t|\n\t|" + tab_multiplication[0][5] +   //nbreChoisi*6
-                        "\t|\n\t|" + tab_multiplication[0][6] +   //nbreChoisi*7
-                        "\t|\n\t|" + tab_multiplication[0][7] +   //nbreChoisi*8
-                        "\t|\n\t|" + tab_multiplication[0][8] +   //nbreChoisi*9
-                        "\t|\n\t|" + tab_multiplication[0][9] +   //nbreChoisi*10
-                        "\t|\n\t|" + tab_multiplication[0][10] +    //nbreChoisi*11
-                        "\t|\n\t|" + tab_multiplication[0][11] + "\t|"); //nbreChoisi*12
-        System.out.println("\t---------");
+                "\t\t|\t" + tab_multiplication[0][0] + //nbreChoisi*1
+                        "\t\t|\n\t\t|\t" + tab_multiplication[0][1] +   //nbreChoisi*2
+                        "\t\t|\n\t\t|\t" + tab_multiplication[0][2] +   //nbreChoisi*3
+                        "\t\t|\n\t\t|\t" + tab_multiplication[0][3] +   //nbreChoisi*4
+                        "\t\t|\n\t\t|\t" + tab_multiplication[0][4] +   //nbreChoisi*5
+                        "\t\t|\n\t\t|\t" + tab_multiplication[0][5] +   //nbreChoisi*6
+                        "\t\t|\n\t\t|\t" + tab_multiplication[0][6] +   //nbreChoisi*7
+                        "\t\t|\n\t\t|\t" + tab_multiplication[0][7] +   //nbreChoisi*8
+                        "\t\t|\n\t\t|\t" + tab_multiplication[0][8] +   //nbreChoisi*9
+                        "\t\t|\n\t\t|\t" + tab_multiplication[0][9] +   //nbreChoisi*10
+                        "\t\t|\n\t\t|\t" + tab_multiplication[0][10] +    //nbreChoisi*11
+                        "\t\t|\n\t\t|\t" + tab_multiplication[0][11] + "\t\t|"); //nbreChoisi*12
+        System.out.println("\t\t--------------");
     }
 }

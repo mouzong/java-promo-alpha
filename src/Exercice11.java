@@ -57,6 +57,8 @@ public class Exercice11 {
             double nbreChoisi1 = scanner.nextDouble();
             double nbreChoisi2 = scanner.nextDouble();
             System.out.println("Le resultat de la modulo entre " + nbreChoisi1 + " et " + nbreChoisi2 + " est " + (nbreChoisi1 % nbreChoisi2));
+        }else{
+            System.out.println("Aucun choix n'a été fait");
         }
 
 
