@@ -1,6 +1,6 @@
-public class Exercice12 {
+public class ExoString {
     public static void main(String[] args) {
-        //Exercice 12
+        //Exercice 1 & 2 & 3 & 4 & 5 & 6
         String hWorld = args[0];
         String hWorld1 = args[1];
         //Affichage programme et de sa taille
