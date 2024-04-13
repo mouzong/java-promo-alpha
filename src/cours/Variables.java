@@ -1,3 +1,5 @@
+package cours;
+
 public class Variables {
     public static void main(String[] args) {
         // Déclaration de variables
