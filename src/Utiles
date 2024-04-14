@@ -1,0 +1,90 @@
+
+Les expressions régulières (regex) sont un outil puissant pour effectuer des opérations de recherche et de manipulation de chaînes de caractères. En Java, les regex sont utilisées dans diverses classes telles que Pattern, Matcher, et elles peuvent être utilisées avec les méthodes de la classe String ainsi qu'avec les classes Scanner et Formatter.
+
+Voici une liste d'expressions régulières couramment utilisées en Java :
+
+Les caractères littéraux :
+
+Les caractères normaux correspondent à eux-mêmes dans une expression régulière. Par exemple, la lettre 'a' correspond à 'a'.
+Les classes de caractères :
+
+[abc] : Correspond à un caractère qui est soit 'a', 'b' ou 'c'.
+[^abc] : Correspond à un caractère qui n'est pas 'a', 'b' ou 'c'.
+[a-z] : Correspond à n'importe quelle lettre minuscule de l'alphabet anglais.
+[A-Z] : Correspond à n'importe quelle lettre majuscule de l'alphabet anglais.
+[0-9] : Correspond à un chiffre de 0 à 9.
+Les quantificateurs :
+
+* : Correspond à zéro ou plusieurs occurrences du motif précédent.
++ : Correspond à une ou plusieurs occurrences du motif précédent.
+? : Correspond à zéro ou une occurrence du motif précédent.
+{n} : Correspond exactement à n occurrences du motif précédent.
+{n,} : Correspond à au moins n occurrences du motif précédent.
+{n,m} : Correspond à entre n et m occurrences du motif précédent.
+Les ancres :
+
+^ : Correspond au début d'une ligne ou d'une chaîne.
+$ : Correspond à la fin d'une ligne ou d'une chaîne.
+Les métacaractères :
+
+. : Correspond à n'importe quel caractère (sauf un saut de ligne).
+\d : Correspond à un chiffre (équivalent à [0-9]).
+\D : Correspond à un caractère non chiffre (équivalent à [^0-9]).
+\s : Correspond à un espace blanc (espaces, tabulations, sauts de ligne).
+\S : Correspond à un caractère non espace blanc.
+\w : Correspond à un caractère alphanumérique (lettres, chiffres et soulignés).
+\W : Correspond à un caractère non alphanumérique.
+\< : Correspond au début d'un mot.
+\> : Correspond à la fin d'un mot.
+Les groupes et les références de groupes :
+
+(abc) : Correspond à la séquence "abc" et peut être référencée plus tard.
+\1, \2, etc. : Correspondent aux groupes capturés précédemment dans la regex.
+Les opérateurs logiques :
+
+| : Correspond à l'opérateur OU.
+Les caractères d'échappement :
+
+\ : Utilisé pour échapper les caractères spéciaux.
+Les commentaires :
+
+(?#comment) : Permet d'insérer des commentaires dans l'expression régulière.
+Les flags :
+
+(?i) : Active l'ignorance de la casse (case-insensitive).
+(?s) : Active le mode "dotall" pour permettre au point (.) de correspondre également aux sauts de ligne.
+Ceci est une liste non exhaustive des expressions régulières couramment utilisées en Java. Les regex peuvent être combinées de différentes manières pour créer des modèles complexes de recherche et de remplacement. Il est également important de noter que Java utilise une syntaxe légèrement différente pour les expressions régulières par rapport à d'autres langages, donc certaines expressions peuvent différer légèrement.
+
+
+
+Couleurs du texte :
+
+Noir : \u001B[30m
+Rouge : \u001B[31m
+Vert : \u001B[32m
+Jaune : \u001B[33m
+Bleu : \u001B[34m
+Magenta : \u001B[35m
+Cyan : \u001B[36m
+Blanc : \u001B[37m
+Couleurs de fond :
+
+Fond noir : \u001B[40m
+Fond rouge : \u001B[41m
+Fond vert : \u001B[42m
+Fond jaune : \u001B[43m
+Fond bleu : \u001B[44m
+Fond magenta : \u001B[45m
+Fond cyan : \u001B[46m
+Fond blanc : \u001B[47m
+Styles de texte :
+
+Texte en gras : \u001B[1m
+Texte en italique : \u001B[3m
+Texte souligné : \u001B[4m
+Texte clignotant : \u001B[5m
+Texte barré : \u001B[9m
+Texte invisible : \u001B[8m
+Réinitialisation :
+
+Réinitialiser toutes les mises en forme : \u001B[0m
