@@ -1,4 +1,4 @@
-import org.jetbrains.annotations.NotNull;
+
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -19,7 +19,7 @@ public class Yann {
 class testString {
     String eter;
 
-    testString(@NotNull String eter) {
+    testString(String eter) {
         this.eter = eter;
     }
 

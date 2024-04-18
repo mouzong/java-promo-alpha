@@ -1,6 +1,6 @@
 public class ExoString {
     public static void main(String[] args) {
-<<<<<<< HEAD
+
         /**
          * Exercice 1
          * Créez une variable de type String et initialisez-la avec la valeur "Hello World".
@@ -47,7 +47,7 @@ public class ExoString {
          *  - "Hello => 2 voyelles"
          *  - "World" => "World => 1 voyelle"
          */
-=======
+
         //Exercice 1 & 2 & 3 & 4 & 5 & 6
         String hWorld = args[0];
         String hWorld1 = args[1];
@@ -83,6 +83,6 @@ public class ExoString {
             System.out.println("\tLa chaine '" + hWorld1 + "' n'est pas contenue dans '" + hWorld + "'");
         }
 
->>>>>>> 6aba0c8330e56a7950b695500becca0b0c7bcbc2
+
     }
 }
