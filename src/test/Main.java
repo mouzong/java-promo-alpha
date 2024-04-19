@@ -7,6 +7,6 @@ public class Main {
         Ajout_user user1=new Ajout_user();
       Scanner sc=new Scanner(System.in);
         String[] tab=user1.user(sc);
-        System.out.println(tab[0]);
+        System.out.println("\t"+tab[0]);
     }
 }
