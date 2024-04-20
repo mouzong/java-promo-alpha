@@ -12,13 +12,11 @@ public class MainMethod {
      */
 
     public static void main(String[] args) {
-        System.out.println("Hello World !");
-        MenuMethod menu = new MenuMethod();
-        int resultat = menu.addition(5,2);
-
-        System.out.println("Le resultat de l'addition est : "+resultat);
-        System.out.println("Le resultat de la soustraction est : "+ menu.soustraction(5,2));
+        Scanner sc = new Scanner(System.in);
+        MenuMethod m1 = new MenuMethod();
+        m1.printUser(m1.createUser(sc));
     }
+
 
 
 
