@@ -1,17 +1,16 @@
+package cours;
+
 public class Variables {
     public static void main(String[] args) {
         // Déclaration de variables
         // <type-de-la-variable> <nom-de-la-variable> = <valeur-de-la-variable>;
 
-        int x;
         int age = 15;
-        int Age = 15;
         double taille = 1.75;
         String prenom = "Andreas";
         String nom = new String("KOUAME");
         char sexe = 'M';
         boolean estEtudiant = true;
-        boolean est_etudiant = true;
 
         // underscore literal
         int million = 1_000_000;
