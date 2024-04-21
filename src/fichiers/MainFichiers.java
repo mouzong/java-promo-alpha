@@ -20,6 +20,7 @@ public class MainFichiers {
 //        PrintWriter monPrintWriter = new PrintWriter(monFileWriter);
 //
 //        monPrintWriter.println("\n\t Premier ligne de mon fichier !");
+//        monPrintWriter.println(tab[i]);
 //        monPrintWriter.println("\t Une autre ligne dans mon fichier !");
 //        monPrintWriter.println("\t Encore une autre ligne dans mon fichier de base !");
 //
@@ -58,7 +59,7 @@ public class MainFichiers {
          *
          * - Afficher un menu pour guider l'utilisateur
          * - lire un fichier
-         * - creer un fichier
+         * - creer un fichiertext
          * - ecrire dans un fichier
          * - enregistrer un utilisateur
          * - afficher le contenu de la BD

@@ -1,0 +1,13 @@
+
+
+ ADA24U21{nomComplet='Christian AMOUGOU', filiere='Genie Reseau', niveau='7'}
+
+
+ asjkajh{nomComplet='', filiere='klahsdksh', niveau='sakds'}
+
+
+ADA24U19{nomComplet='Steve ONDOUA', filiere='Genie Java', niveau='8'}
+
+
+ADA24U18{nomComplet='Yannick KWADJIO', filiere='Genie WinDev', niveau='8'}
+ADA24U17{nomComplet='Andreas MOUZONG', filiere='Genie DevOps', niveau='7'}
