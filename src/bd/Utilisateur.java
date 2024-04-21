@@ -1,9 +1,6 @@
 package bd;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Scanner;
 
 
@@ -85,17 +82,20 @@ public class Utilisateur {
     }
 
 
-
     public void creationEcritureFichier(String[][] args) throws FileNotFoundException {
         File fichierUtilisateur = new File("src/bd/bdd.txt");
+
+
         try {
             fichierUtilisateur.createNewFile();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        try {
 
-            PrintWriter printFichierUtilisateur = new PrintWriter(fichierUtilisateur);
+
+        try {
+            FileWriter fichierWriter = new FileWriter(fichierUtilisateur, true);
+            PrintWriter printFichierUtilisateur = new PrintWriter(fichierWriter);
             printFichierUtilisateur.println("=====================================================================| Listing des utilisateurs |======================================================================");
 
 
@@ -109,9 +109,10 @@ public class Utilisateur {
 
             printFichierUtilisateur.flush();
             printFichierUtilisateur.close();
-        } catch (Exception e) {
-            throw new FileNotFoundException(e.getMessage());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
 
 
     }
