@@ -42,19 +42,19 @@ public class Utilisateur {
 
         System.out.println("\n\t=====Informations sur l'utilisateur=====\n");
 
-        System.out.print("`\tSaisir le nom: ");
+        System.out.print("\tSaisir le nom: ");
         tb[0] = sc.nextLine().toUpperCase();
         while (tb[0].isEmpty()) {
             System.out.print("\n\tLe champs 'nom' est obligatoire, Saisir à nouveau: ");
             tb[0] = sc.nextLine().toUpperCase();
         }
-        System.out.print("`\n\tSaisir le prénom: ");
+        System.out.print("\n\tSaisir le prénom: ");
         tb[1] = sc.nextLine();
         while (tb[1].isEmpty()) {
             System.out.print("\n\tLe champs 'prénom' est obligatoire, Saisir à nouveau: ");
             tb[1] = sc.nextLine();
         }
-        System.out.print("`\n\tSaisir le numéro de téléphone (237XXXXXXXXX): ");
+        System.out.print("\n\tSaisir le numéro de téléphone (237XXXXXXXXX): ");
         tb[2] = sc.nextLine();
         try {
             long tel = Long.parseLong(tb[2]);

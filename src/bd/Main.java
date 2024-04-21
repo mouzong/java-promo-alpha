@@ -12,7 +12,7 @@ public class Main {
          * Création de la table de données et insertion de l'entête;
          */
 
-        String[][] tb_bdd_final = new String[11][6];
+        String[][] tb_bdd_final = new String[6][6];
         tb_bdd_final[0][0] = "No d'ordre";
         tb_bdd_final[0][1] = "Nom";
         tb_bdd_final[0][2] = "Prénom";
