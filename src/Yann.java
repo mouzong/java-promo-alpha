@@ -8,9 +8,9 @@ import static java.lang.System.out;
 public class Yann {
     public static void main(String[] args) {
         out.println("Bonjour je me prénomme Yann, et je suis developpeur java junior");
-        testStringOk test_bonjour = new testStringOk();
+        testString test_bonjour = new testString("bonjour");
 
-        test_bonjour.testString();
+        test_bonjour.afficheString();
 
     }
 
