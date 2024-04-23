@@ -72,13 +72,21 @@ public class Main {
                             utilisateur.creationEcritureFichier(tb_bdd_final);
                             break;
                         case 2:
+
+                           utilisateur.modif_utilisateur(tb_bdd_final);
+                        case 3:
+
+                            break;
+
+                        case 4:
                             /**
                              *  Lire le fichier bdd.txt
                              */
 
                             utilisateur.lirefichier();
                             break;
-                        case 3:
+
+                        case 5:
                             exit = 1;
                             System.out.println("\n\t\u001B[31mAu revoir!\u001B[00m");
                             break;

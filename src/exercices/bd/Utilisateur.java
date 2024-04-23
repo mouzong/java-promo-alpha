@@ -12,21 +12,23 @@ public class Utilisateur {
         int x = 0;
         System.out.println("\n\tBienvenu à la promo Java-Alpha-Promo");
         System.out.println("\t-------------------------------------");
-        System.out.println("\t1. " + OptionMenu.Ajouter_un_utilisateur + "\n");
-        System.out.println("\t2. " + OptionMenu.Afficher_tous_les_utilisateurs + "\n");
-        System.out.println("\t3. " + OptionMenu.Sortir);
+        System.out.println("\t1. " + OptionMenu.Ajouter + "\n");
+        System.out.println("\t2. " + OptionMenu.Modifier + "\n");
+        System.out.println("\t3. " + OptionMenu.Supprimer + "\n");
+        System.out.println("\t4. " + OptionMenu.Tout_afficher + "\n");
+        System.out.println("\t5. " + OptionMenu.Sortir);
         System.out.println("\t-------------------------------------");
         Scanner sc = new Scanner(System.in);
         try {
 
             System.out.print("\tChoisir le menu auquel vous souhaitez accéder?: ");
             x = sc.nextInt();
-            while (x < 1 || x > 4) {
-                System.out.print("\tChoix incorrect, le menu doit-être compris entre 1 et 4, Saisir à nouveau: ");
+            while (x < 1 || x > 5) {
+                System.out.print("\tChoix incorrect, le menu doit-être compris entre 1 et 5, Saisir à nouveau: ");
                 x = sc.nextInt();
             }
         } catch (Exception e) {
-            System.out.println("\t\u001B[31mSeuls les menus compris entre 1 et 4 sont pris en compte\n\tErreur interne: " + e.getMessage() + "\u001B[0m");
+            System.out.println("\t\u001B[31mSeuls les menus compris entre 1 et 5 sont pris en compte\n\tErreur interne: " + e.getMessage() + "\u001B[0m");
         }
 
         return x;
@@ -82,6 +84,60 @@ public class Utilisateur {
     }
 
 
+    public String[] modif_utilisateur(String[][] tbdd) {
+        String[] tb_mod = new String[5];
+        System.out.println("\t-------------------------------------");
+        System.out.print("\tSaisir l'id de l'utilisateur: ");
+
+        Scanner sc = new Scanner(System.in);
+        try {
+            StringBuilder ok = new StringBuilder();
+            int id = sc.nextInt();
+            sc.nextLine();
+            System.out.println("\t-------------------------------------");
+            for (int i = 1; i < tbdd.length; i++) {
+                if (id == Integer.parseInt(tbdd[i][0])) {
+                    ok.append("ok");
+                    break;
+                }
+            }
+            if (ok.toString().equals("ok")) {
+                System.out.println("\t-------------------------------------");
+                System.out.println("\tQuelle information souhaitez-vous modifier? \n\t1. le nom\n\t2. Le prénom\n\t3. " +
+                        "Le numéro de téléphone\n\t4. l'email\n\t5. Le mot de passe\n\t6. Tout modifier");
+                System.out.println("\t-------------------------------------");
+                System.out.print("\tChoix de l'information à modifier: ");
+
+                try {
+                    int choix = sc.nextInt();
+                    sc.nextLine();
+                    System.out.println("\t-------------------------------------");
+                 while(choix<1 || choix>6){
+                     System.out.println("\t-------------------------------------");
+                     System.out.println("\tLe choix doit être compris entre 1 et 5");
+                     choix = sc.nextInt();
+                     sc.nextLine();
+                     System.out.println("\t-------------------------------------");
+                 }
+
+                } catch (Exception e) {
+                    System.out.println("\t\u001B[31mid incorrect, il ne peut être representé que par un entier" +
+                            "\n\tErreur interne: " + e.getMessage() + "\u001B[00m");
+                }
+
+            } else {
+                System.out.println("\t-------------------------------------");
+                System.out.println("\t\u001B[31mid incorrect, il ne peut être representé que par un entier\u001B[00m");
+            }
+
+        } catch (Exception e) {
+            System.out.println("\t\u001B[31mid incorrect, il ne peut être representé que par un entier" +
+                    "\n\tErreur interne: " + e.getMessage() + "\u001B[00m");
+        }
+        return tb_mod;
+    }
+
+
     public void creationEcritureFichier(String[][] args) throws FileNotFoundException {
         File fichierUtilisateur = new File("src/exercices.bd/bdd.txt");
 
@@ -112,7 +168,6 @@ public class Utilisateur {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
 
 
     }
