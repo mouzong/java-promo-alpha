@@ -3,10 +3,10 @@ package poo.student;
 import java.util.Objects;
 
 public class Student {
-    String nomComplet;
-    String matricule;
-    String filiere;
-    String niveau;
+    private String nomComplet;
+    private String matricule;
+    private String filiere;
+    private String niveau;
 
     public Student() {
     }
@@ -19,6 +19,7 @@ public class Student {
     }
 
     public String getNomComplet() {
+
         return nomComplet;
     }
 
@@ -65,18 +66,18 @@ public class Student {
 
     @Override
     public String toString() {
-        return matricule+"{" +
+        return matricule + "{" +
                 "nomComplet='" + nomComplet + '\'' +
                 ", filiere='" + filiere + '\'' +
                 ", niveau='" + niveau + '\'' +
                 '}';
     }
 
-    public String returnFormattedStudentData(){
-        return matricule+" {" +
-                "\n\t\tnomComplet : " + nomComplet  +
-                " \n\t\tfiliere     : " + filiere  +
-                " \n\t\tniveau     : " + niveau  +
+    public String returnFormattedStudentData() {
+        return matricule + " {" +
+                "\n\t\tnomComplet : " + nomComplet +
+                " \n\t\tfiliere     : " + filiere +
+                " \n\t\tniveau     : " + niveau +
                 "\n }";
     }
 }

@@ -11,3 +11,4 @@ ADA24U19{nomComplet='Steve ONDOUA', filiere='Genie Java', niveau='8'}
 
 ADA24U18{nomComplet='Yannick KWADJIO', filiere='Genie WinDev', niveau='8'}
 ADA24U17{nomComplet='Andreas MOUZONG', filiere='Genie DevOps', niveau='7'}
+Ali MOHAMAN,ADA24U16,Genie Java,8
