@@ -9,6 +9,10 @@ import java.util.Scanner;
 public class MainStudent {
     public static void main(String[] args) throws IOException {
 
+        Student std1 = new Student();
+
+
+
         // Creation de mes scanner
         Scanner scannerConsole = new Scanner(System.in);
 
@@ -60,7 +64,11 @@ public class MainStudent {
             studentList[0].setNiveau(sc.nextLine());
 
 
-            bdPrinter.println(studentList[0]);
+            bdPrinter.println(
+                    studentList[0].getNomComplet() + ","
+                            + studentList[0].getMatricule() + ","
+                            + studentList[0].getFiliere() + ","
+                            + studentList[0].getNiveau());
 //            bdPrinter.println("\n");
         }
 
@@ -68,7 +76,6 @@ public class MainStudent {
         bdPrinter.close();
 
         Scanner scFichier = new Scanner(bdEtudiant);
-        scFichier.
 
         System.out.println("\n\t " + studentList[0].returnFormattedStudentData());
 
