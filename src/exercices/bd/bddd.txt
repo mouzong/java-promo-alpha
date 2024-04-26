@@ -1,0 +1,20 @@
+=====================================================================| Listing des utilisateurs |======================================================================
+No d'ordre                    Nom                           Prénom                        Numéro de téléphone           E-mail                        Mot de passe                  No d'ordre                    Nom                           Prénom                        Numéro de téléphone           E-mail                        Mot de passe                  
+1                             KWADJIO                       roméo                         237655037336                  kwadjionry@gmail.com          123456789                     
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+1                             KWADJIO                       roméo                         237655037336                  kwadjionry@gmail.com          123456789                     
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+                                                                                                                                                                                    
+                                                                                                                                                                                    
