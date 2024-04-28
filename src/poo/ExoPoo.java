@@ -84,7 +84,8 @@ public class ExoPoo {
      *
      *
      * Exercice 7 : Simulation d'un jeu de cartes
-     * Objectif : Utiliser l'abstraction, l'héritage et le polymorphisme pour simuler un jeu de cartes.
+     * Objectif : Utiliser l'abstraction, l'héritage et le polymorphisme pour simuler
+     * un jeu de cartes.
      *
      * Créez une classe abstraite Carte avec les attributs :
      * - valeur

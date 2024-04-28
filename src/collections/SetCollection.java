@@ -8,32 +8,20 @@ import java.util.Set;
 public class SetCollection {
     public static void main(String[] args) {
         Set<String> stringSet = new HashSet<>();
-        Iterator iterator = stringSet.iterator();
 
         stringSet.add("Eric MBIDA");
         stringSet.add("Eric MBIDA");
         stringSet.add("Ali MOHAMAN");
         stringSet.add("Yannick KWADJIO");
+        stringSet.add("Steve ONDOUA");
 
-//        for (int i = 0; i< stringSet.size();i++){
-//            System.out.println(stringSet);
-//        }
-
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("\n\t Entrez un entier : ");
-        sc.nextInt();
-        sc.nextLine();
-
-        System.out.print("\n\t Entrez votre prenom : ");
-        sc.nextLine();
-
-        System.out.print("\n\t Entrez votre nom : ");
-        sc.nextLine();
+        Iterator<String> iterator = stringSet.iterator();
 
         while(iterator.hasNext()){
             System.out.println(iterator.next());
         }
+
+
         //System.out.println(stringSet);
     }
 }
