@@ -1,5 +1,7 @@
 package exercices.Classes.BoutiqueEnLigne;
 
+
+
 public class Article {
     int id;
     String nom;
@@ -9,6 +11,10 @@ public class Article {
         this.id = id;
         this.nom = nom;
         this.prix = prix;
+    }
+
+
+    public Article() {
     }
 
     public int getId() {
@@ -34,4 +40,5 @@ public class Article {
     public void setPrix(int prix) {
         this.prix = prix;
     }
+
 }
