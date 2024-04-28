@@ -14,15 +14,15 @@ public class Gestion_Stock {
     public static final String ANSI_RESET = "\u001B[0m";
 
     public static void main(String[] args) {
-        System.out.println("\n\tPROGRAMME DE GESTION DE STOCK");
-        System.out.println(ANSI_BLEU + "[============= MENU ==============]  " + ANSI_RESET +
-                ANSI_CYAN + "\n|\t1-Afficher l'inventaire       " + "|\t" +
-                "\n|\t2-Ajouter un article          " + "|\t" +
-                "\n|\t3-Supprimer un article        " + "|\t" +
-                "\n|\t4-Modifier un article         " + "|\t" +
-                "\n|\t5-Vérifier votre inventaire   " + "|\t" +
-                "\n|\t6-Sortir                      " + "|\t");
-        System.out.println(ANSI_BLEU + "[=================================]" + ANSI_RESET);
+        System.out.println("\t\t\t\n\tPROGRAMME DE GESTION DE STOCK");
+        System.out.println(ANSI_BLEU + "\t\t\t[============= MENU ==============]  " + ANSI_RESET +
+                ANSI_CYAN + "\n\t\t\t|\t1-Afficher l'inventaire       " + "|\t" +
+                "\n\t\t\t|\t2-Ajouter un article          " + "|\t" +
+                "\n\t\t\t|\t3-Supprimer un article        " + "|\t" +
+                "\n\t\t\t|\t4-Modifier un article         " + "|\t" +
+                "\n\t\t\t|\t5-Vérifier votre inventaire   " + "|\t" +
+                "\n\t\t\t|\t6-Sortir                      " + "|\t");
+        System.out.println(ANSI_BLEU + "\t\t\t[=================================]" + ANSI_RESET);
         System.out.println("veuillez entrer le numero correspondant à l'opération que vous souhaitez effectuer");
 
         Scanner inputReader = new Scanner(System.in);

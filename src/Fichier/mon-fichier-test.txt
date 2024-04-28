@@ -1,0 +1,3 @@
+ Ajout d'une chaine de caractere dans le fichier
+ Ajout d'une autre chaine de caractere dans le fichier
+ Ajout d'une troisieme chaine de caractere dans le fichier

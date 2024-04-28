@@ -1,0 +1,3 @@
+Article{id=001, nom='oiseau', prix=4500}
+Article{id=002, nom='pigeon', prix=2500}
+Article{id=003, nom='canard', prix=6500}

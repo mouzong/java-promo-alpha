@@ -1,0 +1,3 @@
+Etudiant{nom='ali mohaman', matricule='5648723-kl', filiere='informatique', niveau=5}
+Etudiant{nom='Kwadjo yann', matricule='5687942', filiere='devop', niveau=9}
+Etudiant{nom='Andreas', matricule='56978555', filiere='Maths', niveau=12}

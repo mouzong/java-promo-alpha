@@ -16,14 +16,14 @@ public class Source {
     }
 
     public static void filiation(String nom, String prenom, String filiere, int niveau) {
-        Scanner sc = new Scanner(System.in);
-        String tab[] = new String[4];
-        System.out.println("Entrez vos données dans l'ordre suivant Nom, Prenom, Filiere et Niveau : ");
-        for (int i = 0; i < 4; i++) {
-            tab[i] = sc.next();
-        }
-        System.out.println("Les éléments entrées sont : " + Arrays.toString(tab).toUpperCase());
-        System.out.println("votre nom est : " + tab[0].toUpperCase() + ", votre prenom est : " + tab[1].toUpperCase() + ", votre filiere " + tab[2].toUpperCase() + " et vous êtes au niveau " + tab[3]);
+        //Scanner sc = new Scanner(System.in);
+        //String tab[] = new String[4];
+       // System.out.println("Entrez vos données dans l'ordre suivant Nom, Prenom, Filiere et Niveau : ");
+       // for (int i = 0; i < 4; i++) {
+           // tab[i] = sc.next();
+       // }
+        //System.out.println("Les éléments entrées sont : " + Arrays.toString(tab).toUpperCase());
+        System.out.println("votre nom est : " + nom.toUpperCase() + ", votre prenom est : " + prenom.toUpperCase() + ", votre filiere " + filiere.toUpperCase() + " et vous êtes au niveau " + niveau);
 
     }
 
