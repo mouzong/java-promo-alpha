@@ -4,6 +4,8 @@ import java.io.*;
 import java.time.LocalDate;
 import java.util.*;
 
+import static java.lang.System.*;
+
 public class Inventaire implements Fichier {
     public UUID id;
     protected String nom;
@@ -97,52 +99,52 @@ public class Inventaire implements Fichier {
 
 
     public int afficherMenu() {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(in);
         /**
          Définition des différents menus du programme
          */
-        System.out.println("\t-------------------------------------");
-        System.out.println("\t|\t------Choix du menu------\t\t|");
-        System.out.println("\t|\t1. Afficher un inventaire\t\t|");
-        System.out.println("\t|\t2. Ajouter un article\t\t\t|");
-        System.out.println("\t|\t3. Supprimer un article\t\t\t|");
-        System.out.println("\t|\t4. Modifier un article\t\t\t|");
-        System.out.println("\t|\t5. Vérifier votre inventaire\t|");
-        System.out.println("\t|\t6. Sortir\t\t\t\t\t\t|");
-        System.out.println("\t-------------------------------------");
+        out.println("\t-------------------------------------");
+        out.println("\t|\t------Choix du menu------\t\t|");
+        out.println("\t|\t1. Afficher un inventaire\t\t|");
+        out.println("\t|\t2. Ajouter un article\t\t\t|");
+        out.println("\t|\t3. Supprimer un article\t\t\t|");
+        out.println("\t|\t4. Modifier un article\t\t\t|");
+        out.println("\t|\t5. Vérifier votre inventaire\t|");
+        out.println("\t|\t6. Sortir\t\t\t\t\t\t|");
+        out.println("\t-------------------------------------");
 
         /**
          Recupérer la donnée entrée par l'utilisateur dans le variable menuChoisi
          */
-        System.out.print("\tVeuillez choisir l'opération à exécuter? ");
+        out.print("\tVeuillez choisir l'opération à exécuter? ");
         int menuchoisi = 0;
         try {
             menuchoisi = sc.nextInt();
             sc.nextLine();
-            System.out.println("\t-------------------------------------");
+            out.println("\t-------------------------------------");
             while (menuchoisi != 1 && menuchoisi != 2 && menuchoisi != 3 && menuchoisi != 4 && menuchoisi != 5 && menuchoisi != 6) {
                 menuchoisi = 0;
-                System.out.println("\tLe menu sélectionné n'existe pas ou est incorrect");
-                System.out.print("\tVeuillez choisir un menu existant ou correct (entre 1 et 6): ");
+                out.println("\tLe menu sélectionné n'existe pas ou est incorrect");
+                out.print("\tVeuillez choisir un menu existant ou correct (entre 1 et 6): ");
                 menuchoisi = sc.nextInt();
                 sc.nextLine();
-                System.out.println("\t-------------------------------------");
+                out.println("\t-------------------------------------");
             }
         } catch (Exception e) {
-            System.out.println("\t-------------------------------------");
-            System.out.println("\t\u001B[31mSaisie incorrecte, Erreur interne: " + e.getMessage() + "\u001B[00m");
+            out.println("\t-------------------------------------");
+            out.println("\t\u001B[31mSaisie incorrecte, Erreur interne: " + e.getMessage() + "\u001B[00m");
         }
         return menuchoisi;
 
     }
 
     public List<String> ajoutArticle(List<String> listArticle, File file) throws FileNotFoundException {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("\t\t-----Ajout d'un article-----\t\t");
+        Scanner sc = new Scanner(in);
+        out.println("\t\t-----Ajout d'un article-----\t\t");
 
         /**Recupérer les informations sur l'article*/
 
-        System.out.print("\tVeuillez saisir toutes les informations sur l'article NomProduit,2024,04,10,2025,04," + "10,qté,prix: ");
+        out.print("\tVeuillez saisir toutes les informations sur l'article NomProduit,2024,04,10,2025,04," + "10,qté,prix: ");
         String produit = sc.nextLine().toUpperCase();
 
 
@@ -150,17 +152,17 @@ public class Inventaire implements Fichier {
 
         String[] tabVerif = produit.split(",");
         while (tabVerif.length != 9 && !produit.equals("EXIT")) {
-            System.out.print("\t\u001B[31mLes informations saisies sont incomplètes\u001B[0m, Veuillez saisir à nouveau (saisir 'exit' pour revenir au menu): ");
+            out.print("\t\u001B[31mLes informations saisies sont incomplètes\u001B[0m, Veuillez saisir à nouveau (saisir 'exit' pour revenir au menu): ");
             produit = sc.nextLine().toUpperCase();
         }
 
         /**vérification des données saisies par l'utilisateur*/
-        System.out.println("\t-------------------------------------");
+        out.println("\t-------------------------------------");
         /*Vérification du nom du Produit*/
         StringBuilder verifNomProduit = new StringBuilder();
         verifNomProduit.append("");
         while (tabVerif[0].equals("")) {
-            System.out.print("\t\u001B[31mNom de l'article non saisi\u001B[0m, Veuillez saisir le nom de l'article: ");
+            out.print("\t\u001B[31mNom de l'article non saisi\u001B[0m, Veuillez saisir le nom de l'article: ");
             verifNomProduit.append(sc.nextLine());
             tabVerif[0] = verifNomProduit.toString();
         }
@@ -179,33 +181,33 @@ public class Inventaire implements Fichier {
 
             /**Boucle pour vérifier si la date de garantie est postérieure à la date d'enregistrement*/
             while (!dateGarantie.isAfter(dateEnregistrement)) {
-                System.out.println("\tQuelle date souhaitez-vous modifier?\n\t1. Date d'enregistrement\n\t2. Date de garantie");
-                System.out.print("\tVeuillez Saisir le choix opéré: ");
+                out.println("\tQuelle date souhaitez-vous modifier?\n\t1. Date d'enregistrement\n\t2. Date de garantie");
+                out.print("\tVeuillez Saisir le choix opéré: ");
                 choix = sc.nextInt();
                 sc.nextLine();
                 while (choix != 1 && choix != 2) {
-                    System.out.print("\tChoix non configuré, saisir à nouveau: ");
+                    out.print("\tChoix non configuré, saisir à nouveau: ");
                     choix = sc.nextInt();
                     sc.nextLine();
                 }
-                System.out.println("\t-------------------------------------");
+                out.println("\t-------------------------------------");
                 /**Choix de la date à modifier*/
                 if (choix == 1) {
-                    System.out.print("\tVeuillez saisir la date d'enregistrement (JJ/MM/AAAA) : ");
+                    out.print("\tVeuillez saisir la date d'enregistrement (JJ/MM/AAAA) : ");
                     verifdte.append(sc.nextLine());
                     dteverif = verifdte.toString().split("/");
                     while (dteverif.length != 3) {
-                        System.out.print("\tLa date saisie n'est pas correct, saisir à nouveau : ");
+                        out.print("\tLa date saisie n'est pas correct, saisir à nouveau : ");
                         verifdte.append(sc.nextLine());
                         dteverif = verifdte.toString().split("/");
                     }
                     dateEnregistrement = LocalDate.of(Integer.parseInt(dteverif[2]), Integer.parseInt(dteverif[1]), Integer.parseInt(dteverif[0]));
                 } else if (choix == 2) {
-                    System.out.print("\tVeuillez saisir la date de garantie (JJ/MM/AAAA) : ");
+                    out.print("\tVeuillez saisir la date de garantie (JJ/MM/AAAA) : ");
                     verifdteg.append(sc.nextLine());
                     dteverif = verifdteg.toString().split("/");
                     while (dteverif.length != 3) {
-                        System.out.print("\tLa date saisie n'est pas correct, saisir à nouveau : ");
+                        out.print("\tLa date saisie n'est pas correct, saisir à nouveau : ");
                         verifdteg.append(sc.nextLine());
                         dteverif = verifdteg.toString().split("/");
                     }
@@ -218,7 +220,7 @@ public class Inventaire implements Fichier {
             StringBuilder verifQteProduit = new StringBuilder();
             verifQteProduit.append("");
             while (tabVerif[7].equals("0")) {
-                System.out.print("\t\u001B[31mLa quantité ne peut pas être nulle\u001B[0m, Veuillez saisir la quantité: ");
+                out.print("\t\u001B[31mLa quantité ne peut pas être nulle\u001B[0m, Veuillez saisir la quantité: ");
                 verifQteProduit.append(sc.nextLine());
                 tabVerif[7] = verifQteProduit.toString();
             }
@@ -226,7 +228,7 @@ public class Inventaire implements Fichier {
             StringBuilder verifPrixProduit = new StringBuilder();
             verifPrixProduit.append("");
             while (tabVerif[8].equals("0")) {
-                System.out.print("\t\u001B[31mLe prix ne peut pas être nulle\u001B[0m, Veuillez saisir la prix: ");
+                out.print("\t\u001B[31mLe prix ne peut pas être nulle\u001B[0m, Veuillez saisir la prix: ");
                 verifPrixProduit.append(sc.nextLine());
                 tabVerif[8] = verifPrixProduit.toString();
             }
@@ -260,7 +262,7 @@ public class Inventaire implements Fichier {
              * */
 
             StringBuilder statutProduit = new StringBuilder();
-            System.out.println("\t-------------------------------------");
+            out.println("\t-------------------------------------");
             /*La variable statut_p permet d'arrêter la recherche dans bdd lorsqu'on a trouvé un produit portant le même nom que celui porté par l'utilisateur*/
             StringBuilder statut_p = new StringBuilder();
             int reponse = 0;
@@ -269,18 +271,18 @@ public class Inventaire implements Fichier {
 
                     /*Si un article portant le même nom est trouvé dans bdd alors un message de confirmation pour continuer l'opération s'affiche*/
 
-                    System.out.println("\t\u001B[31m\u001B[3mCe produit est déjà présente dans la base de données, Souhaitez-vous l'ajouter quand même?\u001B[0m\n\t1. Oui\n\t2. Non");
+                    out.println("\t\u001B[31m\u001B[3mCe produit est déjà présente dans la base de données, Souhaitez-vous l'ajouter quand même?\u001B[0m\n\t1. Oui\n\t2. Non");
 
                     /*Il est demandé à l'utilisateur d'opérer un choix pour continuer ou non l'opération*/
-                    System.out.print("\tVeuillez saisir le choix opéré: ");
+                    out.print("\tVeuillez saisir le choix opéré: ");
 
                     try {
                         reponse = sc.nextInt();
                         sc.nextLine();
-                        System.out.println("\t-------------------------------------");
+                        out.println("\t-------------------------------------");
                         statut_p.append("ok");
                     } catch (Exception e) {
-                        System.out.println("\t\u001B[31mSaisie incorrecte, erreur interne: " + e.getMessage() + "\u001B[00m");
+                        out.println("\t\u001B[31mSaisie incorrecte, erreur interne: " + e.getMessage() + "\u001B[00m");
                     }
 
                 }
@@ -299,7 +301,7 @@ public class Inventaire implements Fichier {
             if (statut_p.toString().equals("ok")) {
                 /**Boucle pour vérifier si le nom de produit choisie par l'utilisateur n'est pas vide*/
                 while (reponse != 1 && reponse != 2) {
-                    System.out.println("\tLe choix opéré n'est pas configuré, Entrez 1 pour ajouter et 2 pour annuler \n\t1. Oui\n\t2. Non");
+                    out.println("\tLe choix opéré n'est pas configuré, Entrez 1 pour ajouter et 2 pour annuler \n\t1. Oui\n\t2. Non");
                     reponse = sc.nextInt();
                     sc.nextLine();
                 }
@@ -315,15 +317,15 @@ public class Inventaire implements Fichier {
 
 
                         /**Un message de confirmation avant d'ajouter l'article*/
-                        System.out.println("\tVous êtes sur le point d'ajouter " + tabVerif[7] + " " + tabVerif[0] + " au prix de " + tabVerif[8] + " FCFA l'unité.\n\tSouhaitez-vous continuer?\n\t1. Oui \n\t2. Non");
-                        System.out.print("\tVeuillez saisir le choix opéré: ");
+                        out.println("\tVous êtes sur le point d'ajouter " + tabVerif[7] + " " + tabVerif[0] + " au prix de " + tabVerif[8] + " FCFA l'unité.\n\tSouhaitez-vous continuer?\n\t1. Oui \n\t2. Non");
+                        out.print("\tVeuillez saisir le choix opéré: ");
                         reponse = sc.nextInt();
                         sc.nextLine();
-                        System.out.println("\t-------------------------------------");
+                        out.println("\t-------------------------------------");
 
                         /*Boucle pour vérifier si le choix fait par l'utilisateur est compris entre 1 et 2*/
                         while (reponse != 1 && reponse != 2) {
-                            System.out.println("\tLe choix opéré n'est pas configuré, Entrez 1 pour ajouter et 2 pour annuler \n\t1. Oui\n\t2. Non");
+                            out.println("\tLe choix opéré n'est pas configuré, Entrez 1 pour ajouter et 2 pour annuler \n\t1. Oui\n\t2. Non");
                             reponse = sc.nextInt();
                             sc.nextLine();
                         }
@@ -353,8 +355,8 @@ public class Inventaire implements Fichier {
                                 /**Affichage du message de validation de l'opération*/
 
                                 if (statut.toString().equals("ok")) {
-                                    System.out.println("\t\u001B[32m\u001B[3mArticle ajouté avec succès\u001B[0m");
-                                    System.out.println("\t-------------------------------------");
+                                    out.println("\t\u001B[32m\u001B[3mArticle ajouté avec succès\u001B[0m");
+                                    out.println("\t-------------------------------------");
                                 }
 
                                 break;
@@ -362,23 +364,23 @@ public class Inventaire implements Fichier {
 
                                 /**Un message de confirmation avant d'annuler l'opération*/
 
-                                System.out.println("`\tVous êtes sur le point d'annuler cette opération," + "Souhaitez-vous annuler?\n\t" + "1. Oui\n\t2. Non");
-                                System.out.print("\tVeuillez saisir le choix opéré: ");
+                                out.println("`\tVous êtes sur le point d'annuler cette opération," + "Souhaitez-vous annuler?\n\t" + "1. Oui\n\t2. Non");
+                                out.print("\tVeuillez saisir le choix opéré: ");
                                 try {
                                     reponse = sc.nextInt();
                                     sc.nextLine();
                                     while (reponse != 1 && reponse != 2) {
-                                        System.out.println("\tLe choix opéré n'est pas configuré, Entrez 1 pour annuler et 2 pour ajouter l'article \n\t1. Oui\n\t2. Non");
+                                        out.println("\tLe choix opéré n'est pas configuré, Entrez 1 pour annuler et 2 pour ajouter l'article \n\t1. Oui\n\t2. Non");
                                         reponse = sc.nextInt();
                                         sc.nextLine();
                                     }
                                 } catch (Exception e) {
-                                    System.out.println("\t\u001B[31mSaisie incorrecte, " + e.getMessage() + "\u001B[00m");
+                                    out.println("\t\u001B[31mSaisie incorrecte, " + e.getMessage() + "\u001B[00m");
                                 }
 
                                 /**Boucle pour vérifier si le choix fait par l'utilisateur est compris entre 1 et 2*/
 
-                                System.out.println("\t-------------------------------------");
+                                out.println("\t-------------------------------------");
 
                                 /*Programme à exécuter en fonction du choix de l'utilisateur*/
                                 switch (reponse) {
@@ -386,7 +388,7 @@ public class Inventaire implements Fichier {
 
                                         statut = new StringBuilder();
                                         statut.append("");
-                                        System.out.println("\u001B[31m\u001B[3mOpération annulée\u001B[0m");
+                                        out.println("\u001B[31m\u001B[3mOpération annulée\u001B[0m");
                                         break;
 
                                     case 2: /*Cas où l'utilisateur choisi de continuer l'opération*/
@@ -399,11 +401,11 @@ public class Inventaire implements Fichier {
 
 
                                         if (statut.toString().equals("ok")) {
-                                            System.out.println("\t\u001B[32m\u001B[3mArticle ajouté avec succès\u001B[0m");
-                                            System.out.println("\t-------------------------------------");
+                                            out.println("\t\u001B[32m\u001B[3mArticle ajouté avec succès\u001B[0m");
+                                            out.println("\t-------------------------------------");
                                         } else {
-                                            System.out.println("\t\u001B[31m\u001B[3mLa base de donnée renvoie : pleine\u001B[0m");
-                                            System.out.println("\t-------------------------------------");
+                                            out.println("\t\u001B[31m\u001B[3mLa base de donnée renvoie : pleine\u001B[0m");
+                                            out.println("\t-------------------------------------");
                                         }
 
                                         break;
@@ -419,8 +421,8 @@ public class Inventaire implements Fichier {
                     case 2:
                         reponse = 2; /*Cas où l'utilisateur choisit d'annuler l'opération à cause du nom du produit identique*/
                         statutProduit.append("ok");
-                        System.out.println("\t\u001B[31m\u001B[3mOpération annulée\u001B[0m");
-                        System.out.println("\t-------------------------------------");
+                        out.println("\t\u001B[31m\u001B[3mOpération annulée\u001B[0m");
+                        out.println("\t-------------------------------------");
 
                         break;
                     default:
@@ -440,8 +442,8 @@ public class Inventaire implements Fichier {
                 statut.append("ok");
 
                 if (statut.toString().equals("ok")) {
-                    System.out.println("\t\u001B[32m\u001B[3mArticle ajouté avec succès\u001B[0m");
-                    System.out.println("\t-------------------------------------");
+                    out.println("\t\u001B[32m\u001B[3mArticle ajouté avec succès\u001B[0m");
+                    out.println("\t-------------------------------------");
 
                 }
 
@@ -452,21 +454,21 @@ public class Inventaire implements Fichier {
     }
 
 
-
-
     @Override
-    public void ecrireFichier(FileWriter fileWriter, List<String> listArticle) throws RuntimeException{
+    public void ecrireFichier(FileWriter fileWriter, List<String> listArticle) throws RuntimeException {
         try {
-            fileWriter=new FileWriter("src/exercices/Recap/bdd.txt",true);
+            fileWriter = new FileWriter("src/exercices/Recap/bdd.txt", true);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        PrintWriter pWriter=new PrintWriter(fileWriter);
-        String[] tbWriter=listArticle.toString().split(",");
+        PrintWriter pWriter = new PrintWriter(fileWriter);
+        String[] tbWriter = listArticle.toString().split(",");
+        tbWriter[0] = tbWriter[0].replace("[", "");
+        tbWriter[6] = tbWriter[6].replace("]", "");
         pWriter.printf("\n");
-        for(int i=0;i<tbWriter.length;i++){
-            pWriter.printf("%-40s",tbWriter[i]);
-    }
+        for (int i = 0; i < tbWriter.length; i++) {
+            pWriter.printf("%-40s", tbWriter[i]);
+        }
         pWriter.flush();
         pWriter.close();
     }
@@ -475,15 +477,23 @@ public class Inventaire implements Fichier {
     public void lectureFichier(File file) throws FileNotFoundException {
         Scanner sc = new Scanner(file);
         while (sc.hasNext()) {
-            System.out.println(sc.nextLine());
+            out.println(sc.nextLine());
         }
 
     }
 
     @Override
-    public void suppressionFichier(File file) {
-
+    public List<String> suppressionFichier(File file, String uuid) throws FileNotFoundException {
+        Scanner sc = new Scanner(file);
+        List<String> listBdd=new ArrayList<>();
+        while (sc.hasNext()){
+            if(!sc.nextLine().contains(uuid)){
+                listBdd.add(sc.nextLine());
+            }
+        }
+        return listBdd;
     }
+
 
 
 }

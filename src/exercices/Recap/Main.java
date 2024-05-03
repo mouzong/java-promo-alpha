@@ -19,16 +19,16 @@ public class Main {
         /**
          * Création fichier de données
          */
-        File newFile=new File("src/exercices/Recap/bdd.txt");
+        File newFile = new File("src/exercices/Recap/bdd.txt");
         FileWriter fileWriter = null;
         try {
-            if(!newFile.exists()){
-               String[] tb= {"No d'ordre","Nom de l'article","Date enreg.","Date garantie","Qté","Prix Unitaire","Prix Total"};
+            if (!newFile.exists()) {
+                String[] tb = {"No d'ordre", "Nom de l'article", "Date enreg.", "Date garantie", "Qté", "Prix Unitaire", "Prix Total"};
                 newFile.createNewFile();
-                fileWriter=new FileWriter(newFile);
-                PrintWriter printWriter=new PrintWriter(fileWriter);
-                for(int i=0;i<tb.length;i++){
-                    printWriter.printf("%-40s",tb[i]);
+                fileWriter = new FileWriter(newFile);
+                PrintWriter printWriter = new PrintWriter(fileWriter);
+                for (int i = 0; i < tb.length; i++) {
+                    printWriter.printf("%-40s", tb[i]);
 
                 }
                 printWriter.flush();
@@ -62,10 +62,35 @@ public class Main {
                         article.lectureFichier(newFile);
                         break;
                     case 2:
-                  article.ajoutArticle(listArticle,newFile);
-                  article.ecrireFichier(fileWriter,listArticle);     
-                  break;
+                        article.ajoutArticle(listArticle, newFile);
+                        article.ecrireFichier(fileWriter, listArticle);
+                        break;
                     case 3:
+
+                        /*Choix de l'id de l'article à supprimer*/
+                        System.out.print("\tVeuillez saisir l'identifiant de l'article à supprimer: ");
+                        String uuid= sc.nextLine();
+                        /*Boucle pour vérifier si le numéro d'ordre est présent dans bdd */
+                        System.out.println();
+
+                       newFile.delete();
+                       newFile.createNewFile();
+                        String[] tb = {"No d'ordre", "Nom de l'article", "Date enreg.", "Date garantie", "Qté", "Prix Unitaire", "Prix Total"};
+
+                        PrintWriter printWriter = new PrintWriter(fileWriter,true);
+                        for (int i = 0; i < tb.length; i++) {
+                            printWriter.printf("%-40s", tb[i]);
+
+                        }
+                       fileWriter=new FileWriter(newFile);
+                       printWriter=new PrintWriter(fileWriter,true);
+                        for(int i=0;i<article.suppressionFichier(newFile, uuid).size();i++){
+                            printWriter.println(article.suppressionFichier(newFile, uuid).get(i));
+                        }
+
+                        printWriter.flush();
+                        printWriter.close();
+                        System.out.println("\t\u001B[32mSuppression effectuée avec succès\u001B[00m");
                         break;
                     case 4:
                         break;

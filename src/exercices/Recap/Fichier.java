@@ -15,6 +15,6 @@ public interface Fichier {
     public void ecrireFichier(FileWriter fileWriter, List<String> listArticle);
 
     public void lectureFichier(File file) throws FileNotFoundException;
-    public void suppressionFichier(File file);
+    public List<String> suppressionFichier(File file,String uuid) throws FileNotFoundException;
 
 }
