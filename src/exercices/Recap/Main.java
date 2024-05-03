@@ -3,6 +3,7 @@ package exercices.Recap;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 public class Main {
@@ -19,8 +20,22 @@ public class Main {
          * Création fichier de données
          */
         File newFile=new File("src/exercices/Recap/bdd.txt");
+        FileWriter fileWriter = null;
         try {
-            newFile.createNewFile();
+            if(!newFile.exists()){
+               String[] tb= {"No d'ordre","Nom de l'article","Date enreg.","Date garantie","Qté","Prix Unitaire","Prix Total"};
+                newFile.createNewFile();
+                fileWriter=new FileWriter(newFile);
+                PrintWriter printWriter=new PrintWriter(fileWriter);
+                for(int i=0;i<tb.length;i++){
+                    printWriter.printf("%-40s",tb[i]);
+
+                }
+                printWriter.flush();
+                printWriter.close();
+
+            }
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -47,8 +62,9 @@ public class Main {
                         article.lectureFichier(newFile);
                         break;
                     case 2:
-
-                        break;
+                  article.ajoutArticle(listArticle,newFile);
+                  article.ecrireFichier(fileWriter,listArticle);     
+                  break;
                     case 3:
                         break;
                     case 4:
