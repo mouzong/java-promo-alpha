@@ -108,9 +108,7 @@ public class Inventaire implements Fichier {
         out.println("\t|\t1. Afficher un inventaire\t\t|");
         out.println("\t|\t2. Ajouter un article\t\t\t|");
         out.println("\t|\t3. Supprimer un article\t\t\t|");
-        out.println("\t|\t4. Modifier un article\t\t\t|");
-        out.println("\t|\t5. Vérifier votre inventaire\t|");
-        out.println("\t|\t6. Sortir\t\t\t\t\t\t|");
+        out.println("\t|\t4. Sortir\t\t\t\t\t\t|");
         out.println("\t-------------------------------------");
 
         /**
@@ -122,7 +120,7 @@ public class Inventaire implements Fichier {
             menuchoisi = sc.nextInt();
             sc.nextLine();
             out.println("\t-------------------------------------");
-            while (menuchoisi != 1 && menuchoisi != 2 && menuchoisi != 3 && menuchoisi != 4 && menuchoisi != 5 && menuchoisi != 6) {
+            while (menuchoisi != 1 && menuchoisi != 2 && menuchoisi != 3 && menuchoisi != 4 ) {
                 menuchoisi = 0;
                 out.println("\tLe menu sélectionné n'existe pas ou est incorrect");
                 out.print("\tVeuillez choisir un menu existant ou correct (entre 1 et 6): ");
@@ -262,7 +260,6 @@ public class Inventaire implements Fichier {
              * */
 
             StringBuilder statutProduit = new StringBuilder();
-            out.println("\t-------------------------------------");
             /*La variable statut_p permet d'arrêter la recherche dans bdd lorsqu'on a trouvé un produit portant le même nom que celui porté par l'utilisateur*/
             StringBuilder statut_p = new StringBuilder();
             int reponse = 0;
@@ -483,17 +480,29 @@ public class Inventaire implements Fichier {
     }
 
     @Override
-    public List<String> suppressionFichier(File file, String uuid) throws FileNotFoundException {
+    public void suppressionFichier(File file, String uuid) throws IOException {
+
         Scanner sc = new Scanner(file);
-        List<String> listBdd=new ArrayList<>();
-        while (sc.hasNext()){
-            if(!sc.nextLine().contains(uuid)){
+        List<String> listBdd = new ArrayList<>();
+        while (sc.hasNext()) {
                 listBdd.add(sc.nextLine());
+        }
+
+        for (int i = 0; i < listBdd.size(); i++) {
+            if(listBdd.get(i).contains(uuid)){
+                listBdd.remove(i);
             }
         }
-        return listBdd;
-    }
+        FileWriter fileWriter = new FileWriter(file);
+        PrintWriter pWriter = new PrintWriter(fileWriter);
+        for (int i = 0; i < listBdd.size(); i++) {
+            pWriter.print(listBdd.get(i));
+        }
+        pWriter.flush();
+        pWriter.close();
 
+
+    }
 
 
 }

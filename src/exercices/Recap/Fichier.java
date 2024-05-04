@@ -1,9 +1,6 @@
 package exercices.Recap;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Collection;
 import java.util.List;
 
@@ -15,6 +12,6 @@ public interface Fichier {
     public void ecrireFichier(FileWriter fileWriter, List<String> listArticle);
 
     public void lectureFichier(File file) throws FileNotFoundException;
-    public List<String> suppressionFichier(File file,String uuid) throws FileNotFoundException;
+    public void suppressionFichier(File file,String uuid) throws IOException;
 
 }

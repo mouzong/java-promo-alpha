@@ -48,7 +48,6 @@ public class Main {
         while (exit == 0) {
             System.out.print("\tVeuillez écrire 'launch' pour ouvrir le menu ou 'exit' pour sortir du programme : ");
             String dem = sc.nextLine();
-            System.out.println("\t--------------------------------------------------------------------");
 
             /**
              * Condition pour entrer ou sortir du programme
@@ -69,35 +68,42 @@ public class Main {
 
                         /*Choix de l'id de l'article à supprimer*/
                         System.out.print("\tVeuillez saisir l'identifiant de l'article à supprimer: ");
-                        String uuid= sc.nextLine();
-                        /*Boucle pour vérifier si le numéro d'ordre est présent dans bdd */
-                        System.out.println();
+                        String uuid = sc.nextLine();
 
-                       newFile.delete();
-                       newFile.createNewFile();
-                        String[] tb = {"No d'ordre", "Nom de l'article", "Date enreg.", "Date garantie", "Qté", "Prix Unitaire", "Prix Total"};
+                        article.suppressionFichier(newFile, uuid);
 
-                        PrintWriter printWriter = new PrintWriter(fileWriter,true);
-                        for (int i = 0; i < tb.length; i++) {
-                            printWriter.printf("%-40s", tb[i]);
-
-                        }
-                       fileWriter=new FileWriter(newFile);
-                       printWriter=new PrintWriter(fileWriter,true);
-                        for(int i=0;i<article.suppressionFichier(newFile, uuid).size();i++){
-                            printWriter.println(article.suppressionFichier(newFile, uuid).get(i));
-                        }
-
-                        printWriter.flush();
-                        printWriter.close();
                         System.out.println("\t\u001B[32mSuppression effectuée avec succès\u001B[00m");
                         break;
                     case 4:
+                        int reponse = 0;
+                        System.out.println("\tVous êtes sur le point de vous sortir du programme, Souhaitez-vous continuer?\n\t" + "1. Oui\n\t2. Non");
+                        System.out.print("\tVeuillez saisir le choix opéré: ");
+                        try {
+                            reponse = sc.nextInt();
+                            while (reponse != 1 && reponse != 2) {
+                                System.out.println("\tLe choix opéré n'est pas configuré, Entrez 1 pour quitter et 2 pour revenir \n\t1. Oui\n\t2. Non");
+                                reponse = sc.nextInt();
+                                sc.nextLine();
+                            }
+                            System.out.println("\t-------------------------------------");
+                            switch (reponse) {
+                                case 1:
+                                    System.out.println("\t\u001B[31m\u001B[3mMerci d'avoir utilisé notre programme. Nous espérons que vous avez\n\t" + "trouvé l'expérience agréable et utile. N'hésitez pas à revenir si vous avez besoin d'aide \n\t" + "à l'avenir. À bientôt !\u001B[0m\n");
+                                    System.out.println("\t--------------------------------------------------------------------");
+                                    exit = 1;
+                                    break;
+                                case 2:
+                                    System.out.println("\t\u001B[32m\u001B[3mNous sommes ravis que vous ayez décidé de rester avec nous ! \n\t" + "Votre engagement envers notre programme est précieux et nous sommes \n\t" + "déterminés à vous offrir la meilleure expérience possible. Si vous avez \n\t" + "des questions, des suggestions ou si vous avez besoin d'aide, n'hésitez \n\t" + "pas à nous contacter. Merci encore pour votre confiance et votre fidélité !\u001B[0m\n\t");
+                                    System.out.println("\t--------------------------------------------------------------------");
+                                default:
+                            }
+                        } catch (Exception e) {
+                            System.out.println("\tSaisie incorrect, Erreur interne: " + e.getMessage());
+                        }
+
                         break;
-                    case 5:
-                        break;
-                    case 6:
-                        break;
+
+
                     default:
 
                 }
