@@ -15,25 +15,27 @@ public class Inventaire implements Fichier {
     protected int prix;
     protected int prixTotal;
 
-    public Inventaire() {
-    }
 
-    public Inventaire(UUID id, String nom, LocalDate dateEnreg, LocalDate dateGarantie, int qte, int prix, int prixTotal) {
-        this.id = UUID.randomUUID();
+
+    public Inventaire(String nom, LocalDate dateEnreg, LocalDate dateGarantie, int qte, int prix, int prixTotal) {
         this.nom = nom;
-        DateEnreg = dateEnreg;
-        DateGarantie = dateGarantie;
+        this.DateEnreg = dateEnreg;
+        this.DateGarantie = dateGarantie;
         this.qte = qte;
         this.prix = prix;
         this.prixTotal = prixTotal;
     }
 
-    public UUID getId() {
-        return id;
+    public Inventaire(UUID id, String s, LocalDate dateGarantie, LocalDate localDate, String string, String s1) {
+        this.id= this.id;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public Inventaire() {
+
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     public String getNom() {
@@ -136,7 +138,7 @@ public class Inventaire implements Fichier {
 
     }
 
-    public List<String> ajoutArticle(List<String> listArticle, File file) throws FileNotFoundException {
+    public List<Inventaire> ajoutArticle(List<Inventaire> listArticle, File file) throws FileNotFoundException {
         Scanner sc = new Scanner(in);
         out.println("\t\t-----Ajout d'un article-----\t\t");
 
@@ -263,8 +265,8 @@ public class Inventaire implements Fichier {
             /*La variable statut_p permet d'arrêter la recherche dans bdd lorsqu'on a trouvé un produit portant le même nom que celui porté par l'utilisateur*/
             StringBuilder statut_p = new StringBuilder();
             int reponse = 0;
-            for (String article : listArticle) {
-                if (!article.isEmpty() && article.equals(tabVerif[0])) {
+            for (Inventaire article : listArticle) {
+                if (!article.toString().isEmpty() && article.equals(tabVerif[0])) {
 
                     /*Si un article portant le même nom est trouvé dans bdd alors un message de confirmation pour continuer l'opération s'affiche*/
 
@@ -341,10 +343,7 @@ public class Inventaire implements Fichier {
 
 
                                 /**Remplissage de la base de données bdd*/
-
-                                UUID uuid = UUID.randomUUID();
-                                listArticle.add(uuid.toString().toUpperCase() + "," + tabVerif[0] + "," + tabVerif[1] + "/" + tabVerif[2] + "/" + tabVerif[3] + "," + tabVerif[4] + "/" + tabVerif[5] + "/" + tabVerif[6] + "," + tabVerif[7] + "," + tabVerif[8] + "," + Integer.parseInt(tabVerif[7]) * Integer.parseInt(tabVerif[8]));
-
+                                listArticle=List.of(new Inventaire(id,tabVerif[0],LocalDate.of(Integer.parseInt(tabVerif[1]),Integer.parseInt(tabVerif[2]),Integer.parseInt(tabVerif[3])),LocalDate.of(Integer.parseInt(tabVerif[4]),Integer.parseInt(tabVerif[5]),Integer.parseInt(tabVerif[6])),tabVerif[7],tabVerif[8]));
 
                                 statut.append("ok");
 
@@ -391,8 +390,7 @@ public class Inventaire implements Fichier {
                                     case 2: /*Cas où l'utilisateur choisi de continuer l'opération*/
                                         statut = new StringBuilder();
                                         statut.append("");
-                                        uuid = UUID.randomUUID();
-                                        listArticle.add(uuid.toString().toUpperCase() + "," + tabVerif[0] + "," + tabVerif[1] + "/" + tabVerif[2] + "/" + tabVerif[3] + "," + tabVerif[4] + "/" + tabVerif[5] + "/" + tabVerif[6] + "," + tabVerif[7] + "," + tabVerif[8] + "," + Integer.parseInt(tabVerif[7]) * Integer.parseInt(tabVerif[8]));
+                                        listArticle.add(new Inventaire(id,tabVerif[0],LocalDate.of(Integer.parseInt(tabVerif[1]),Integer.parseInt(tabVerif[2]),Integer.parseInt(tabVerif[3])),LocalDate.of(Integer.parseInt(tabVerif[4]),Integer.parseInt(tabVerif[5]),Integer.parseInt(tabVerif[6])),tabVerif[7],tabVerif[8]));
 
                                         statut.append("ok");
 
@@ -433,10 +431,8 @@ public class Inventaire implements Fichier {
                 statut.append("");
 
 
-                UUID uuid = UUID.randomUUID();
-
-                listArticle.add(uuid.toString().toUpperCase() + "," + tabVerif[0] + "," + tabVerif[1] + "/" + tabVerif[2] + "/" + tabVerif[3] + "," + tabVerif[4] + "/" + tabVerif[5] + "/" + tabVerif[6] + "," + tabVerif[7] + "," + tabVerif[8] + "," + Integer.parseInt(tabVerif[7]) * Integer.parseInt(tabVerif[8]));
-                statut.append("ok");
+listArticle=List.of(new Inventaire(id,tabVerif[0],LocalDate.of(Integer.parseInt(tabVerif[1]),Integer.parseInt(tabVerif[2]),Integer.parseInt(tabVerif[3])),LocalDate.of(Integer.parseInt(tabVerif[4]),Integer.parseInt(tabVerif[5]),Integer.parseInt(tabVerif[6])),tabVerif[7],tabVerif[8]));
+                     statut.append("ok");
 
                 if (statut.toString().equals("ok")) {
                     out.println("\t\u001B[32m\u001B[3mArticle ajouté avec succès\u001B[0m");
@@ -452,7 +448,7 @@ public class Inventaire implements Fichier {
 
 
     @Override
-    public void ecrireFichier(FileWriter fileWriter, List<String> listArticle) throws RuntimeException {
+    public void ecrireFichier(FileWriter fileWriter, List<Inventaire> listArticle) {
         try {
             fileWriter = new FileWriter("src/exercices/Recap/bdd.txt", true);
         } catch (IOException e) {
@@ -468,6 +464,7 @@ public class Inventaire implements Fichier {
         }
         pWriter.flush();
         pWriter.close();
+
     }
 
     @Override

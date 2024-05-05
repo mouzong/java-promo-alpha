@@ -1,21 +1,26 @@
 package exercices.Recap;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
 import java.util.*;
+
 
 public class Main {
     public static void main(String[] args) throws IOException {
         /**
          * Création d'un article
          */
-        Inventaire article = new Inventaire();
+        Inventaire article=new Inventaire();
         /**
          * Création de la liste des articles présent dans l'inventaire
          */
-        List<String> listArticle = new ArrayList<>();
+        List<Inventaire> listArticle = new ArrayList<>();
         /**
          * Création fichier de données
          */
@@ -69,6 +74,15 @@ public class Main {
                         /*Choix de l'id de l'article à supprimer*/
                         System.out.print("\tVeuillez saisir l'identifiant de l'article à supprimer: ");
                         String uuid = sc.nextLine();
+
+                        String fileSuppr = "src/exercices/Recap/bdd.txt";
+                        Path path = Paths.get(fileSuppr);
+                        try {
+                            Files.delete(path);
+                            System.out.println("\tFichier supprimé avec succès");
+                        } catch (IOException e) {
+                            System.out.println("\tImpossible de supprimer le fichier: " + e.getMessage());
+                        }
 
                         article.suppressionFichier(newFile, uuid);
 
