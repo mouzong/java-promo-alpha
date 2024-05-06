@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Collections {
 
@@ -13,6 +14,11 @@ public class Collections {
         aList.add("kwadjio");
         System.out.println(aList.get(0));
 
+        List<String> listClient=List.of(
+                new String("Kwadjio"),
+        new String("Kwadjio")
+
+        );
 
 
 
