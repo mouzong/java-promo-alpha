@@ -1,14 +1,15 @@
-package Training_yann.PF;
+package Training_yann.PF.Menu;
 
-public enum menu {
+public enum Menu {
     Facturation("Facturation"),
     Gestion_du_stock("Gestion du stock"),
     Suivi_de_la_clientele("Suivi de la clientèle"),
-    Gestion_des_utilisateurs("Gestion des utilisateurs");
+    Gestion_des_utilisateurs("Gestion des utilisateurs"),
+    Sortir("Sortir");
 
     private String displayName;
 
-    menu(String displayName) {
+    Menu(String displayName) {
         this.displayName = displayName;
     }
 

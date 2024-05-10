@@ -1,4 +1,6 @@
-package Training_yann.PF;
+package Training_yann.PF.User;
+
+import Training_yann.PF.Fonction.Fichier;
 
 import java.io.File;
 import java.io.IOException;
