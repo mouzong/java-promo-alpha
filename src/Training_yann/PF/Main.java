@@ -19,11 +19,11 @@ public class Main {
     public static void main(String[] args) throws IOException {
         int exit = 0;
         Set<Utilisateur> listUser = new HashSet<>();
-
+Map<String,Integer> menuChoix=new HashMap<>();
         Scanner sc = new Scanner(System.in);
         Utilisateur user = new Utilisateur();
-        Client client1=new Client();
-        File file = new File("src/Training_yann/PF/src.txt");
+        Client client1 = new Client();
+        File file;
         String launchApp;
         while (exit == 0) {
             System.out.print("Saisir 'launch' pour lancer l'application ou 'exit' pour sortir: ");
@@ -33,13 +33,11 @@ public class Main {
                 launchApp = sc.nextLine();
             }
             if (launchApp.equals("launch")) {
-
-                System.out.println(menuFacture.apply(menuPrincipal(sc)));
-
-if(menuFacture.apply(menuPrincipal(sc)).keySet().toString().contains("Client")){
-
-    Client.ajout.apply(client1,sc);
-}
+                launchApp = "";
+                menuChoix=menuFacture.apply(menuPrincipal(sc));
+                if (menuChoix.containsKey("Client")) {
+                    Client.ajout.apply(client1, sc);
+                }
             } else if (launchApp.equals("exit")) {
                 exit = 1;
                 System.out.println("\u001B[31mMerci d'avoir utilisé notre application, nous espérons " +

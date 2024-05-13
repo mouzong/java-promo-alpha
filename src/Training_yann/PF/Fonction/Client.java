@@ -139,7 +139,7 @@ public class Client {
         client.setNom(sc.nextLine());
         while(client.getNom().isEmpty()){
             System.out.print("Nom: ");
-            client.setNom(sc.nextLine());
+            client.setNom(sc.nextLine().toUpperCase());
         }
         System.out.print("Prénom : ");
         client.setPrenom(sc.nextLine());
@@ -167,11 +167,11 @@ public class Client {
         System.out.print("Nº Téléphone: ");
         try {
             client.setTelephone(sc.nextInt());
+            System.out.println("\u001B[32mEnregistrement réussi\u001B[00m");
         } catch (Exception e) {
             System.out.println("\u001B[31mSaisie incorrecte, Erreur interne: " + e.getMessage() + "\u001B[00m");
         }
-
-
+        
         return client.toString();
     };
 
